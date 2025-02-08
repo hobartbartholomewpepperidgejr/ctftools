@@ -1,2 +1,3 @@
-compile.bat
+compileandzipforgithub.bat
 ctf.exe
+ctftools.zip
