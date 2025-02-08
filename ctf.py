@@ -54,7 +54,7 @@ listener.start()
 
 while True:
     sleep(0.0125)
-    print("\x1b[;H\033[J", end="")
+    print("\x1b[;H\x1b[J", end="")
     if latest[0]==3:
         print("\x1b[1;42mL", str(latest[0])+"\x1b[0m")
     else:
