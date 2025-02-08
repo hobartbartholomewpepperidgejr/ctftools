@@ -32,8 +32,8 @@ def on_release(key):
     except:
         nkey=str(key)[4:]
     try:
-        if nkey==controls["J"] and unpresstime>=200 and ingame==False:
-            fromstart=time()-(unpresstime-200)*0.025
+        if nkey==controls["J"] and unpresstime>=120 and ingame==False:
+            fromstart=time()-(unpresstime-120)*0.025
             ingame=False
             aup=True
             apress=0
@@ -54,16 +54,16 @@ listener.start()
 
 while True:
     sleep(0.0125)
-    print("\033[;H\033[J", end="")
+    print("\x1b[;H\033[J", end="")
     if latest[0]==3:
-        print("\033[1;42mL", str(latest[0])+"\033[0m")
+        print("\x1b[1;42mL", str(latest[0])+"\x1b[0m")
     else:
-        print("\033[1;41mL", str(latest[0])+"\033[0m")
+        print("\x1b[1;41mL", str(latest[0])+"\x1b[0m")
 
     if latest[1]==3:
-        print("\033[1;42mR", str(latest[1])+"\033[0m")
+        print("\x1b[1;42mR", str(latest[1])+"\x1b[0m")
     else:
-        print("\033[1;41mR", str(latest[1])+"\033[0m")
+        print("\x1b[1;41mR", str(latest[1])+"\x1b[0m")
 
     if latest[0]!=latest[1]:
-        print("\n\033[1;41mdesynchronized!\033[0m", "\ntry tapping lighter/harder until the values match and turn green!")
+        print("\n\x1b[1;41mdesynchronized!\x1b[0m", "\ntry tapping lighter/harder until the values match and turn green!")
